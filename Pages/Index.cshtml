@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-left">
+    <h1 class="rubrik">Välkommen</h1>
+
+    <p class="infoText">
+        Läs vilka <a asp-page="/razor">kurser</a> jag har läst på programmet Webbutveckling!
+    </p>
+
+
+
+    @* Detta funkar inte. Jag fattar att jag måste byta Server till något annat, men vad vet jag inte
+            @{
+            var imagePath = Server.MapPath("~/images");
+            var files = Directory.GetFiles(imagePath);
+        }
+        Total images: @files.Count();
+        @foreach (var file in files)
+        {
+            <div>
+                <img src="~/images@Path.GetFileName(file)" alt="Sample img" />
+            </div>
+        }*@
+
+</div>

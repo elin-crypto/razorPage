@@ -1,0 +1,31 @@
+﻿@page
+@model Moment1.Pages.RazorModel
+@{
+}
+<div class="text-left">
+    <h1 class="rubrik">Razor</h1>
+
+    <div>
+        @{
+            var weekDay = DateTime.Now.DayOfWeek.ToString();
+            if (weekDay == "Monday")
+            {
+                <p>Idag är det måndag</p>
+            }
+            else
+            {
+                <p>Idag är det inte måndag</p>
+            }
+        }
+
+    </div>
+ 
+    <ul class="courseList">
+        @foreach(var course in Model.GetCourses())
+        {
+            <li>@course</li>
+        }
+    </ul>
+
+
+</div>

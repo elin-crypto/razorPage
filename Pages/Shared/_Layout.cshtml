@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Elins razor</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <a href="javascript:void(0);" id="menuIcon" onclick="openNav()"> <i class="fa fa-bars"></i></a>
+        <a href="javascript:void(0);" id="closeIcon" onclick="closeNav()">  <i class="fa fa-times"></i></a>
+
+        <div id="logo"><a asp-page="/index"><img src="~/images/logoRazor_aj.svg" alt="logotyp"></a></div>
+        <div id="mondayOrNey">
+            @{
+                var now = DateTime.Now.ToString();
+                var noSeconds = now.Remove(15, 3);
+                <p>@noSeconds</p>
+            }
+
+        </div>
+        <aside>
+
+
+            <nav id="sidebar">
+                <ul class="list-unstyled components ulList">
+                    <li class="navItem" id="nav_1">
+                        <a asp-page="/Index">Start</a>
+                    </li>
+                    <li class="navItem" id="nav_2">
+                        <a asp-page="/Razor">Razor</a>
+                    </li>
+                    <li class="navItem" id="nav_3">
+                        <a asp-page="/About">Om sidan</a>
+                    </li>
+                </ul>
+
+
+            </nav>
+        </aside>
+
+    </header>
+    <div class="mainContainer">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer">
+        <div class="container">
+            &copy; 2021 - Elin Kurtsdotter </a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

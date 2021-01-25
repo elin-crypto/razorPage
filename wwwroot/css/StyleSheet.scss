@@ -1,0 +1,23 @@
+﻿body {
+}
+header {
+    #mondayOrNey {
+        position: absolute;
+        right: 2em;
+        z-index: 1;
+    }
+
+    aside {
+        width: 20%;
+        nav {
+            ul {
+                li{
+                    a{
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
